@@ -5,4 +5,4 @@ const money = '30',
       mission = 'completed',
       period = '3';
 
-alert('Хочу изучить JS!');
+console.log('Хочу изучить JS!');
