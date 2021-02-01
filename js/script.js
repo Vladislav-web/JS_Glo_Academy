@@ -27,13 +27,13 @@ let money = 100000,
           amount2 = prompt('Во сколько это обоейдется?');
 
     const budgetMonth = money - 50000.9
-          console.log(budgetMonth);
+          console.log(`Бюджет на месяц: ${budgetMonth}`);
 
     const target = mission / budgetMonth;
-          console.log(Math.ceil(target));
+          console.log(`Цель будет достигнута через: ${Math.ceil(target)} месяцев`);
 
           budgetDay = budgetMonth / 30
-          console.log(Math.floor(budgetDay)); 
+          console.log(`Бюджет на день: ${Math.floor(budgetDay)}`); 
 
    if(budgetDay > 1200) { 
      console.log('У вас высокий уровень дохода');
