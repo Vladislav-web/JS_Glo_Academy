@@ -33,11 +33,11 @@ let   money,
           } else if (i === 1) {
             expenses2 = prompt('Введите обязательную статью расходов', 'Электричество');
           }
-          let Amount = prompt("Во сколько это обойдется?");
-          while (!isNumber(Amount)) {
-               Amount = prompt("Во сколько это обойдется?");
+          let num = prompt("Во сколько это обойдется?");
+          while (!isNumber(num)) {
+               num = prompt("Во сколько это обойдется?");
              }
-             sum += +Amount;
+             sum += +num;
         }
         return sum;
       };
