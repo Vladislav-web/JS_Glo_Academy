@@ -21,6 +21,8 @@ let   money,
             }  while (!isNumber(money));
         }; 
       }
+
+      start();
       
       // расход за месяц
       function getExpensesMonth() {
@@ -37,6 +39,8 @@ let   money,
         return sum;
       };
 
+      let expensesAmount = getExpensesMonth();
+      
       // накопления за месяц
       function getAcсumulatedMonth () {
         return money - expensesAmount;
@@ -46,6 +50,7 @@ let   money,
        function getTargetMonth(money, accumulatedMonth) {
         return  money / accumulatedMonth;
       };
+
 
       let showTypeOf = function (item) {
         console.log(item, typeof (item));
@@ -63,22 +68,15 @@ let   money,
         }
       };
 
-      start();
-  let expensesAmount = getExpensesMonth(),
-      budgetDay = accumulatedMonth / 30;
       deposit = confirm('Есть ли у вас депозит в банке?');
       addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую').toLocaleLowerCase().split(',');
-      accumulatedMonth = getAcсumulatedMonth();
-
-      if (getTargetMonth(money, accumulatedMonth) > 0) {
-        console.log(`Цель будет достигнута за ${Math.ceil(getTargetMonth(money, accumulatedMonth))} месяцев(а)`);
-      } else {
-        console.log('Цель не будет достигнута');
-      }
-
+      
       showTypeOf(money);
       showTypeOf(income);
       showTypeOf(deposit);
+
+      accumulatedMonth = getAcсumulatedMonth();
+let   budgetDay = accumulatedMonth / 30;
       console.log(addExpenses);
       console.log('Расход за месяц', expensesAmount);
       console.log('Накопления за месяц', getAcсumulatedMonth());
@@ -86,8 +84,13 @@ let   money,
       console.log('Статьи расходов:', expenses1, expenses2);
       console.log(getStatusIncome());
 
- 
- 
+      if (getTargetMonth(money, accumulatedMonth) > 0) {
+          console.log(`Цель будет достигнута за ${Math.ceil(getTargetMonth(money, accumulatedMonth))} месяцев(а)`);
+      } else {
+          console.log('Цель не будет достигнута');
+      }
+
+
 
 
 
